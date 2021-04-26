@@ -1,12 +1,23 @@
-var = input('Input - ')
 
-if var % 4:
-    print('Output - ' + str(var) + ' is not a leap year')
+# “Years that are evenly divisible by 4 except
+# years that are evenly divisible by 100
+# unless the years are also evenly divisible by 400”.
+
+
+# “(Years that are evenly divisible by 4) except ((years that are evenly divisible by 100) unless (the years are also evenly divisible by 400))”.
+
+# “(Years % 4 == 0) except (years % 100 == 0) unless (years % 400 == 0)”.
+
+# %4 | %100 | %400 | Leap Year
+#  1    0       0        1
+#  1    1       0        0
+#  1    1       1        1
+
+# “((Years % 4 == 0) and not (years % 100 == 0)) or (years % 400 == 0)”.
+
+year = int(input('Input - '))
+
+if (year % 400 == 0) or ((year % 4 == 0) and not (year % 100 == 0)):
+    print("Output - " + str(year) + " is a leap year")
 else:
-    if var % 100:
-        print('Output - ' + str(var) + ' is a leap year')
-    else:
-        if var % 400:
-            print('Output - ' + str(var) + ' is not a leap year')
-        else:
-            print('Output - ' + str(var) + ' is a leap year')
+    print("Output - " + str(year) + " is not a leap year")
