@@ -16,14 +16,19 @@
 # “((Years % 4 == 0) and not (years % 100 == 0)) or (years % 400 == 0)”.
 
 # Error Handling implementation suggested in https://docs.python.org/3/tutorial/errors.html
-while True:
-    try:
-        year = int(input("Input - "))
-        break
-    except ValueError:
-        print("Error! Please enter an Integer")
+# while True:
+#     try:
+#         yearIn = int(input("Input - "))
+#         break
+#     except ValueError:
+#         print("Error! Please enter an Integer")
 
-if (year % 400 == 0) or ((year % 4 == 0) and not (year % 100 == 0)):
-    print("Output - " + str(year) + " is a leap year")
-else:
-    print("Output - " + str(year) + " is not a leap year")
+# leapYear(yearIn);
+
+# def leapYear(year):
+#     if (year % 400 == 0) or ((year % 4 == 0) and not (year % 100 == 0)):
+#         print("Output - " + str(year) + " is a leap year")
+#         return True
+#     else:
+#         print("Output - " + str(year) + " is not a leap year")
+#         return False
